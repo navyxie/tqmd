@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head id="head">
+    <meta charset="UTF-8" />
+    <meta name="viewport" id="chaoBaiDa" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="Description" content="天气美搭-潮百搭" />
+    <title>天气美搭-潮百搭</title>
+    <link rel="stylesheet" type="text/css" href="./static/src/stylesheets/common.css" />
+    <link rel="stylesheet" type="text/css" href="./static/src/stylesheets/index.css" />
+</head>
+<body>
+    <div id="gloabLoading"><img src="./static/src/images/loading.gif" class="loading"/><br /><span class="loadingTxt">loading...</span></div>
+    <section data-role="page" id="weaterWrapper" class="appPage"></section>
+    <div data-role="page" id="index" class="appPage" style="display:none;" >
+    <div id="watchPosition"><a id="watchPositionBtn" data-open="false" href="javascript:;">点击检测位置变化</a></div>
+        <div>当前位置：</div>
+        <div><span>标题：</span><span id="headingContainer"></span></div>
+        <div><span>维度：</span><span id="latitudeContainer"></span></div>
+        <div><span>经度：</span><span id="longitudeContainer"></span></div>
+        <div><span>准确性：</span><span id="accuracyContainer"></span></div>
+        <div id="errorContainer">获取位置失败</div>
+    </div>
+    <script src="./sea-modules/seajs/seajs/2.1.1/sea.js" id="seajsnode"></script>
+    <script>
+        var prefix = "cbdapp",version=1;
+        window.appConfig = {
+            debug:false,
+            appHost:''
+        }
+        if(window.appConfig.debug === false){
+            window.appConfig.appHost = 'http://192.168.1.11:6300';
+            // window.appConfig.appHost = 'http://192.168.1.68:6300';
+        }   
+        // Set configuration
+        var seajsConfig = {
+            base: "./",
+            alias: {
+                "zepto":"sea-modules/gallery/zepto/1.1.2/zepto-debug",
+                "$":"sea-modules/gallery/zepto/1.1.2/zepto-debug",
+                "underscore": "sea-modules/gallery/underscore/1.5.2/underscore-debug",
+                "backbone": "sea-modules/gallery/backbone/1.1.0/backbone-debug"
+            },
+            vars:{
+                jsPre:'.min'
+            },
+            //添加版本号，清除缓存
+            map:[
+                [/^.*$/,function(url) {return url += (url.indexOf('?') === -1 ? '?' : '&') + 'ts=' + version;}]
+            ]
+        }
+        if(window.appConfig.debug === false){
+            seajsConfig.alias['cordova'] = "sea-modules/phonegap/cordova/cordova-debug";
+            seajsConfig.alias['childbrowser'] = "sea-modules/phonegap/plugins/phonegap-childbrowser-debug";
+            seajsConfig.alias['toast'] = "sea-modules/phonegap/plugins/phonegap-toast-debug";
+            seajsConfig.alias['kalengo'] = "sea-modules/phonegap/plugins/phonegap-kalengo-debug";
+        }
+        seajs.config(seajsConfig);
+        // For development
+        if (location.href.indexOf("?dev") > 0) {
+            seajs.use("./static/src/javascripts/main");
+        }
+        // For production
+        else {
+            seajs.use("./static/src/javascripts/main");
+            // seajs.use("appjs/main");
+        }
+    </script> 
+</body>
+</html>
