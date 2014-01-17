@@ -1,14 +1,14 @@
 define(function(require,exports,module){
     var BB = require('backbone');
     var baseUrl = window.appConfig.appHost+'/app/index';
-    var weaterItemModel = require('../models/weateritem');
-    var weaterCollection = BB.Collection.extend({
+    var setsModel = require('../models/sets');
+    var setsCollection = BB.Collection.extend({
         urlRoot:baseUrl,
         url:baseUrl,
-        model:weaterItemModel,
+        model:setsModel,
         parse:function(response){
             return response.result;
         }
     });
-    module.exports = weaterCollection;
+    module.exports = setsCollection;
 });

@@ -1,6 +1,308 @@
-.appPage{
-    margin: 0;
-    padding:0;
-    font-size: 20px;
-    padding: 10px;
+.indexPage{
+    color: #fff;
+}
+#indexNav{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-image: -webkit-linear-gradient(top, #333, #000);
+    // background: #000;
+    // opacity: 0.9;
+    z-index: 999;
+    .linksContent{
+        overflow: hidden;
+        .linkItem{
+            width: 20%;
+            height: 70px;
+            float: left;  
+            a{
+                display: block;
+                padding-top: 40px;
+                text-align: center;
+                height: 30px;
+                color: #7d7d7d;
+                font-size: 2.6em;
+                -moz-user-select: none; 
+                -khtml-user-select: none; 
+                user-select: none;
+                text-shadow:none;
+            }
+            &.selected{
+                a{
+                    color: #fff;
+                }
+                // background-color: #029EE9;              
+            }
+            a:hover,a:active,a:link,a:visited{
+                // none;
+            }
+        }
+        .nav1{
+            background: url('../images/nav1.png') center 10px no-repeat;
+        }
+        .nav2{
+            background: url('../images/nav2.png') center 10px no-repeat;
+        }
+        .nav3{
+            background: url('../images/nav3.png') center 10px no-repeat;
+        }
+        .nav4{
+            background: url('../images/nav4.png') center 10px no-repeat;
+        }
+        .nav5{
+            background: url('../images/nav5.png') center 10px no-repeat;
+        }
+        .nav1.selected{
+            background: url('../images/nav1_selected.png') center 10px no-repeat;
+        }
+        .nav2.selected{
+            background: url('../images/nav2_selected.png') center 10px no-repeat;
+        }
+        .nav3.selected{
+            background: url('../images/nav3_selected.png') center 10px no-repeat;
+        }
+        .nav4.selected{
+            background: url('../images/nav4_selected.png') center 10px no-repeat;
+        }
+        .nav5.selected{
+            background: url('../images/nav5_selected.png') center 10px no-repeat;
+        }
+    }
+}    
+#searchCityWeaterContainer{
+    display: none;
+    position: absolute;
+    z-index: 99;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background:#000;
+    color: #fff;
+    margin-bottom: 80px;
+    padding-bottom: 80px;
+}
+.forcastWeaterView{
+    img{
+        max-width: 320px;
+    }
+}
+.forcastWeaterContainer{
+    display: none;
+}
+.pageBg{
+    width: 100%;
+    overflow:hidden;
+    position: absolute;
+    left: 0;
+    top:0;
+    bottom: 0;
+    right: 0;
+    img{
+        position: absolute;
+        border: none;
+    }
+}
+#currentWeaterContainer{
+    .fixedTop{
+        position: fixed;
+        top:0;
+        left: 0;
+        height: 50px;
+        width: 100%;  
+        background-color: rgba(146,157,157,0);
+        background-image: -webkit-linear-gradient(top, rgba(0,0,0,.65), rgba(0,0,0,.64) 1%, rgba(0,0,0,.15) 77%, rgba(0,0,0,0));
+        background-image: -moz-linear-gradient(top, rgba(0,0,0,.65), rgba(0,0,0,.64) 1%, rgba(0,0,0,.15) 77%, rgba(0,0,0,0));
+        background-image: -o-linear-gradient(top, rgba(0,0,0,.65), rgba(0,0,0,.64) 1%, rgba(0,0,0,.15) 77%, rgba(0,0,0,0));
+        background-image: linear-gradient(to bottom, rgba(0,0,0,.65), rgba(0,0,0,.64) 1%, rgba(0,0,0,.15) 77%, rgba(0,0,0,0));
+        // background: url('../images/topbg.png') 0 0 repeat-x;
+        .cityText{
+            display: block;
+            position: absolute;
+            top:0;
+            left: 10px;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 25px;
+            text-overflow: ellipsis;
+            width: 60px;
+            background: url('../images/location.png') 0 7px no-repeat;
+            color: #fff;
+            text-shadow: none;
+        }
+        .shareBtn{
+            display: block;
+            position: absolute;
+            right:10px;
+            top:0;
+            height: 40px;
+            width: 50px;
+            background: url('../images/share.png') center center no-repeat; 
+        }
+        .centerText{
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            text-align: center;
+            span{
+                color: #fff;
+                text-shadow: none;
+                font-weight: 700;
+            }
+        }
+    }
+}
+.pageContent{
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+    left: 0;
+    top:0;
+}
+.recommentContainer{
+    position: relative;
+    overflow-y: scroll;
+    width: 100%;
+    // background-color: rgba(0,0,0,0.3);
+    .weaterTextInfo{
+        height: 67px;
+        .wIcon{
+            img{
+
+            }
+        }
+        .wText{
+            color: #fff;
+            font-size: 1.6em;
+            vertical-align: 0.6em;
+        }
+    }
+    .weaterValInfo{
+        height: 70px;
+        .currentWeaterVal{
+            height: 70px;
+            line-height: 70px;
+            display: inline-block;
+            font-size: 3em;
+            float: left;
+            padding-left: 10px;
+        }
+        .minMaxWeaterVal{
+            height: 70px;
+            display: inline-block;
+            padding-left: 10px;
+            .degreeTop{
+                height: 20px;
+                font-size: 2em;
+            }
+            .degreeBottom{
+                height: 30px;
+                padding-top: 20px;
+            }
+            .line{
+                padding: 0 3px;
+            }
+        }
+    }
+    .moveLine{
+        width: 0;
+        height: 2px;
+        background-color: #000;
+        background-image: -webkit-linear-gradient(left, rgba(254,102,79,.98) 18%, rgba(255,227,114,.98) 46%, rgba(255,21,85,.98));
+        background-image: -moz-linear-gradient(left, rgba(254,102,79,.98) 18%, rgba(255,227,114,.98) 46%, rgba(255,21,85,.98));
+        background-image: -o-linear-gradient(left, rgba(254,102,79,.98) 18%, rgba(255,227,114,.98) 46%, rgba(255,21,85,.98));
+        background-image: linear-gradient(to right, rgba(254,102,79,.98) 18%, rgba(255,227,114,.98) 46%, rgba(255,21,85,.98));
+        // background: url('../images/highlight.png') repeat-x;
+        transition: width 5s;
+        -moz-transition: width 5s;
+        -webkit-transition: width 5s;
+        -o-transition: width 5s;
+    }
+    .moveLineActive{
+        width: 100%;
+    }
+    .recommentItemIcons{
+        height: 40px;
+        position: absolute;
+        top:105px;
+        right: 0;
+        width: 155px;
+        overflow: hidden;
+        z-index: 9;
+        ul{
+            overflow:hidden;
+            li{
+                float: left;
+                width: 40px;
+                height: 40px;
+                border-radius: 20px;
+                -moz-radius: 20px;
+                -webkit-radius: 20px;
+                -o-radius: 20px;
+                text-align: center;
+                margin-right: 5px;
+                img{
+                    margin-top: 5px;
+                    width: 30px;
+                }
+            }
+            li:nth-child(odd){
+                background: #FF5FA9;
+            }
+            li:nth-child(even){
+                background: #D377B6;
+            }
+        }        
+    }
+    .recommentText{
+        height: 56px;
+        line-height: 56px;        
+        background:rgba(0,0,0,0.3);
+        position: relative;
+        .tip{
+            padding-left: 10px;
+        }
+        .iconNext{
+            position: absolute;
+            left: 0;
+            top:0;
+            width: 100%;
+            height: 100%;
+            background: url('../images/next.png') center center no-repeat;
+        }
+    }
+    .recommentItems{
+        .itemContent{
+            padding: 10px;
+            margin: 10px;
+            overflow: hidden;
+            background: rgba(255,255,255,0.5);
+            .itemList{
+                height: 100px;
+                background: #fff;
+                a{
+                    display: block;
+                    width: 100%;
+                    height: 100px;
+                    line-height: 100px;
+                    overflow: hidden;
+                    img{
+                        display: block;
+                        float: left;
+                        width: 100px;
+                        min-height: 100%;
+                    }
+                    span{
+                        padding-left: 10px;
+                        text-overflow: ellipsis;
+                        vertical-align: 40px;
+                    }
+                }
+            }
+        }
+    }
 }

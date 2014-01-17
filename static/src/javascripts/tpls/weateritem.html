@@ -1,4 +1,6 @@
 <div class="weaterView forcastWeaterView">
-	<div><span>天气情况:</span><span><%= weather.text%></span></div>
-	<div><span>温度:</span><span>最高温度：</span><span><%= temp.max.c%></span><span>最低温度：</span><span><%= temp.min.c%></span></div>
+	<% forcastDate = new Date(time) %>
+	<div><span>日期:</span><span><%= forcastDate.getFullYear() + '/' + (1+forcastDate.getMonth()) + '/' + forcastDate.getDate() %></span></div>
+    <div><span>天气情况:</span><span><%= weather.text%></span></div>
+    <div><span>温度:</span><span>最高温度：</span><span><%= temp.max.c%></span><span>最低温度：</span><span><%= temp.min.c%></span></div>
 </div>

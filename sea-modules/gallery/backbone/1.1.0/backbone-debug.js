@@ -1,7 +1,13 @@
-define("sea-modules/gallery/backbone/1.1.0/backbone-debug", [ "sea-modules/gallery/underscore/1.5.2/underscore-debug", "sea-modules/gallery/zepto/1.1.2/zepto-debug" ], function(require, exports) {
+// define("sea-modules/gallery/backbone/1.1.0/backbone-debug", [ "sea-modules/gallery/underscore/1.5.2/underscore-debug", "sea-modules/jquery/jquery/2.0.3/jquery-debug"], function(require, exports) {
+//     var previousUnderscore = this._;
+//     var previousJQuery = this.jQuery;
+//     this._ = require("sea-modules/gallery/underscore/1.5.2/underscore-debug");
+//     this.jQuery = require("sea-modules/jquery/jquery/2.0.3/jquery-debug");
+define("sea-modules/gallery/backbone/1.1.0/backbone-debug", [ "sea-modules/gallery/underscore/1.5.2/underscore-debug", "sea-modules/gallery/zepto/1.1.2/zepto-debug"], function(require, exports) {
     var previousUnderscore = this._;
     var previousJQuery = this.jQuery;
     this._ = require("sea-modules/gallery/underscore/1.5.2/underscore-debug");
+    // this.jQuery = require("sea-modules/jquery/jquery/2.0.3/jquery-debug");
     this.Zepto = require("sea-modules/gallery/zepto/1.1.2/zepto-debug"); 
     //     Backbone.js 1.1.0
 

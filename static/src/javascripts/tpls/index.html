@@ -1,0 +1,59 @@
+<div class="indexView" style="height:<%=winH %>px;width:<%=winW%>px;overflow:hidden;">
+	<% currentDate = new Date(weather.weather.current.time) %>
+	<% current = weather.weather.current %>
+    <ul class="pageWrapper" style="min-height:<%=winH %>px;width:<%=winW*(set.length)%>px;">
+        <% _.each(set,function(oneSet){ %>
+            <li class="pageContent" style="min-height:<%=winH %>px;width:<%=winW%>">
+                <div class="pageBg" style="height:<%=winH %>px;">
+                    <img src=<%= oneSet.model %> style="width:<%=oneSet.modelInfo.width %>px;height:<%=oneSet.modelInfo.height %>px;" />
+                </div>
+                <div data-top="50" data-bottom="<%=(winH-195)%>" class="recommentContainer relative" style="top:<%=(winH-195) %>px;height:<%=winH-50 %>px;">
+                    <div class="weaterTextInfo">
+                        <span class="wIcon"><img src=<%=current.weather.icon %> /></span>
+                        <span class="wText"><%=current.weather.text %></span>
+                    </div>
+                    <div class="weaterValInfo">
+                        <div class="currentWeaterVal"><%= current.temp.cur.c %></div>
+                        <div class="minMaxWeaterVal">
+                            <p class="degreeTop">°</p>
+                            <p class="degreeBottom"><span><%= current.temp.min.c %></span><em>°</em><span>C</span><span class="line">~</span><span><%= current.temp.max.c %></span><em>°</em><span>C</span></p>
+                        </div>
+                    </div>
+                    <div class="moveLine"></div>
+                    <div class="recommentItemIcons">
+                        <ul class="recommentItemIconsContent" style="width:<%= 45*(oneSet.items.length) %>px;">
+                            <% _.each(oneSet.items,function(item,index){ %>
+                                <li class="itemIcon itemIcon<%= index%>"><img src=<%= item.icon %> /></li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                    <div class="recommentText">
+                        <p class="iconNext"></p>
+                        <span class="tip"><%=oneSet.title %></span>
+                    </div>
+                    <div class="recommentItems">
+                        <% _.each(oneSet.items,function(item,index){ %>
+                            <div class="itemContent">
+                                <div class="itemList">
+                                    <a href="javascript:;" class="itemA">
+                                        <img src="<%= item.img %>" />
+                                        <span class="label"><%= item.label %></span>
+                                    </a>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </li>
+        <% }); %>       
+    </ul>
+    <div class="fixedTop">
+    	<a href="javascript:;" class="cityText"><%= weather.city %></a>
+    	<div class="centerText">
+    		<span class="appText">天气美搭</span>
+    		<span class="dotText">·</span>
+    		<span class="dateText"><%= ((1+currentDate.getMonth()) < 10 ? "0"+(1+currentDate.getMonth()) : (1+currentDate.getMonth())) + '/' + currentDate.getDate() %></span>
+    	</div>
+    	<a href="javascript:;" class="shareBtn"></a>
+    </div>    
+</div>

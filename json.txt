@@ -1,0 +1,165 @@
+{
+  "code": 0,
+  "result": {
+    "weather": {
+      "city": "广州",
+      "weather": {
+        "forecast": [
+          {
+            "time": 1390045718741,
+            "temp": {
+              "min": {
+                "c": 6,
+                "f": 42.8
+              },
+              "max": {
+                "c": 19,
+                "f": 66.2
+              }
+            },
+            "weather": {
+              "text": "霾"
+            },
+            "interval": "d"
+          },
+          {
+            "time": 1390132118741,
+            "temp": {
+              "min": {
+                "c": 7,
+                "f": 44.6
+              },
+              "max": {
+                "c": 19,
+                "f": 66.2
+              }
+            },
+            "weather": {
+              "text": "晴"
+            },
+            "interval": "d"
+          },
+          {
+            "time": 1390218518741,
+            "temp": {
+              "min": {
+                "c": 8,
+                "f": 46.4
+              },
+              "max": {
+                "c": 17,
+                "f": 62.6
+              }
+            },
+            "weather": {
+              "text": "晴"
+            },
+            "interval": "d"
+          },
+          {
+            "time": 1390304918741,
+            "temp": {
+              "min": {
+                "c": 5,
+                "f": 41
+              },
+              "max": {
+                "c": 17,
+                "f": 62.6
+              }
+            },
+            "weather": {
+              "text": "晴"
+            },
+            "interval": "d"
+          },
+          {
+            "time": 1390391318741,
+            "temp": {
+              "min": {
+                "c": 4,
+                "f": 39.2
+              },
+              "max": {
+                "c": 18,
+                "f": 64.4
+              }
+            },
+            "weather": {
+              "text": "晴"
+            },
+            "interval": "d"
+          }
+        ],
+        "current": {
+          "time": 1389959318741,
+          "temp": {
+            "min": {
+              "c": 8,
+              "f": 46.4
+            },
+            "max": {
+              "c": 21,
+              "f": 69.8
+            },
+            "cur": {
+              "c": 12
+            }
+          },
+          "weather": {
+            "text": "霾",
+            "icon": "http://img.chaobaida.com/common/images/weather_wear/static/fine.png"
+          },
+          "humidity": 73,
+          "wind": {
+            "dir": {
+              "text": "北"
+            },
+            "level": 2
+          }
+        }
+      }
+    },
+    "set": [
+      {
+        "_id": "52d63f4a31c8f6611a46d334",
+        "content": "红色给人注入活力，修身的款式会让人看起来更加性感高挑，婀娜迷人，轻轻垂下的百褶裙摆提升气质感。",
+        "model": "http://img.chaobaida.com/common/images/weather_wear/8/8.jpg",
+        "title": "红色气质装",
+        "items": [
+          {
+            "iid": "35209902287",
+            "img": "http://img.chaobaida.com/common/images/weather_wear/8/35209902287.png",
+            "label": "棉衣",
+            "icon": "http://img.chaobaida.com/common/images/weather_wear/static/coat.png"
+          },
+          {
+            "iid": "35390077071",
+            "img": "http://img.chaobaida.com/common/images/weather_wear/8/35390077071.png",
+            "label": "毛衣",
+            "icon": "http://img.chaobaida.com/common/images/weather_wear/static/coat.png"
+          },
+          {
+            "iid": "36406054564",
+            "img": "http://img.chaobaida.com/common/images/weather_wear/8/36406054564.png",
+            "label": "毛呢背心裙",
+            "icon": "http://img.chaobaida.com/common/images/weather_wear/static/coat.png"
+          },
+          {
+            "iid": "36327481290",
+            "img": "http://img.chaobaida.com/common/images/weather_wear/8/36327481290.png",
+            "label": "马丁靴",
+            "icon": "http://img.chaobaida.com/common/images/weather_wear/static/coat.png"
+          }
+        ],
+        "tags": [
+          "微冷"
+        ],
+        "ms": {
+          "w": 501,
+          "h": 732
+        }
+      }
+    ]
+  }
+}

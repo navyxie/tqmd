@@ -1,33 +1,81 @@
 define(function(require,exports,module){
+    // var $ = require('jquery');
     var $ = require('zepto');
     var _ = require('underscore');
     var BB = require('backbone');
-    var weatherItemView = require('./weateritem');
-    var weaterModel = new (require('../models/weater'));
-    var weaterItemCollection = new (require('../collections/weateritem'));
-    var initCurWeaterItemModel = new (require('../models/curweateritem'));
-    var curWeatherItemView = require('./curweateritem');  
+    var weaterModel = require('../models/weater');
     var UTIL = require('../vendors/util'),LOAD = UTIL.LOAD;
+    var getTpl = UTIL.TPL.get;
+    var WINDOW = UTIL.WINDOW;
+    var IMAGE = UTIL.IMAGE;
     var weaterView = BB.View.extend({
         className:'weaterViewContainer',
+        template:_.template(getTpl.call(UTIL.TPL,'index')),
         initialize:function(){
             var self = this; 
-            self.el = $(self.el);   
+            self.el = $(self.el); 
             self.htmlArr = [];
-            weaterModel.bind('change',self.render,this);        
+            self.weaterModel = new weaterModel();
+            self.weaterModel.bind('change',self.render,this);  
+            self.handlerEvent();      
         },
-        el:'#weaterWrapper',
-        events:{          
+        events:{    
+        },
+        handlerEvent:function(e){
+            var self = this;
+            self.el.on('tap','.pageBg,.weaterValInfo,.recommentText',function(e){
+                var _this = $(this);
+                if(_this.hasClass('pageBg')){
+                    self.showRecomment();
+                }else if(_this.hasClass('weaterValInfo') || _this.hasClass('recommentText')){
+                    self.hideRecomment();
+                }
+            });
+        },
+        showRecomment:function(){
+            var self = this;
+            self.recommentContainer.css({top:self.recommentContainer.attr('data-top')+'px'});
+            // self.recommentContainer.animate({
+            //     top:$(this).attr('data-top')
+            // });
+        },
+        hideRecomment:function(){
+            var self = this;
+            self.recommentContainer.css({top:self.recommentContainer.attr('data-bottom')+'px'});
+            // self.recommentContainer.animate({
+            //     top:$(this).attr('data-bottom')
+            // });
         },
         render:function(){
             var self = this;
-            self.el.append(self.makeHtml(weaterModel.toJSON()));
-            console.log(self.htmlArr.join(''));
+            var modelData = self.weaterModel.toJSON();
+            var winW = WINDOW.getWidth();
+            var winH = WINDOW.getHeight()-70;//顶部导航是70高度
+            modelData.set = _.map(modelData.set,function(oneSet){
+                var tempObj = {};
+                var imgW = oneSet.ms.w;
+                var imgH = oneSet.ms.h;               
+                if(imgW/imgH <= winW/winH){
+                    tempObj = IMAGE.autoResizeImage(winW,0,imgW,imgH);
+                }else{
+                    tempObj = IMAGE.autoResizeImage(0,winH,imgW,imgH);
+                }                   
+                oneSet.modelInfo = tempObj;
+                return oneSet;
+            });  
+            modelData.winH = winH;
+            modelData.winW = winW;     
+            self.el.append(self.template(modelData));
+            self.recommentContainer = self.el.find('.recommentContainer');
+            setTimeout(function(){
+                self.el.find('.moveLine').addClass('moveLineActive').css({width:'100%'}).removeClass('moveLineActive');
+            },20);        
             return self;          
         },
         fetchData:function(data,cbf){
+            var self = this;
             LOAD.show();
-            weaterModel.fetch({
+            self.weaterModel.fetch({
                 data:data,
                 success:function(){
                     LOAD.hide();
@@ -38,31 +86,6 @@ define(function(require,exports,module){
                     cbf({msg:'获取天气数据失败'},arguments);
                 }
             });
-        },
-        makeHtml:function(data){
-            var self = this;
-            self.htmlArr.push('<div class="cityContainer"><span class="cityText">'+data.city+'</span></div>');
-            initCurWeaterItemModel.set(data.weather.current);
-            weaterItemCollection.add(data.weather.forecast);
-            self.addCurWeaterItem(initCurWeaterItemModel);
-            self.addForecastAll();
-            return self.htmlArr.join('');
-        },
-        addForecastOne:function(model){
-            var self = this;
-            var initWeatherItemView = new weatherItemView({model:model});
-            self.htmlArr.push(initWeatherItemView.getHtml());
-        },
-        addForecastAll:function(){
-            var self = this;
-            weaterItemCollection.each(function(){
-                self.addForecastOne.apply(self,arguments);
-            })
-        },
-        addCurWeaterItem:function(model){
-            var self = this;
-            var initCurWeatherItemView = new curWeatherItemView({model:model});
-            self.htmlArr.push(initCurWeatherItemView.getHtml());
         }
     });
     module.exports = weaterView;

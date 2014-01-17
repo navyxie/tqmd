@@ -6,8 +6,8 @@ define(function(require,exports,module){
     var $ = require('jquery');
     var BB = require('backbone');
     var weaterItemView = BB.View.extend({
-        className:'weaterViewContent',
-        template:_.template(getTpl.call(UTIL.TPL,'weateritem')),
+        className:'weaterSetContent',
+        template:_.template(getTpl.call(UTIL.TPL,'sets')),
         initialize:function(){
             var self = this; 
             self.el = $(self.el);               

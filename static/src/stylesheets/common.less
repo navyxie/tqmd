@@ -18,6 +18,11 @@ table {
 fieldset, img {
     border: 0;
 }
+img{
+    -moz-user-select: none; 
+    -khtml-user-select: none; 
+    user-select: none;
+}
 address, caption, cite, code, dfn, em, strong, th, var {
     font-style: normal;
     font-weight: normal;
@@ -100,4 +105,14 @@ a:hover{
     img{
         margin-top: 15px;
     }
+}
+.appPage{
+    display: none;
+    padding: 0;
+    margin: 0;
+    font-size: 2.6em;
+    text-shadow: none;
+}
+.indexPage{
+    display: block; 
 }
