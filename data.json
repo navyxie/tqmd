@@ -1,0 +1,178 @@
+{
+  "code": 0,
+  "result": {
+    "weather": {
+      "city": "广州",
+      "weather": {
+        "current": {
+          "time": 1390210946633,
+          "wind": {
+            "level": 3,
+            "dir": {
+              "text": "北"
+            }
+          },
+          "temp": {
+            "cur": {
+              "c": 18,
+              "f": 64.4
+            },
+            "min": {
+              "c": 6,
+              "f": 42.8
+            },
+            "max": {
+              "c": 21,
+              "f": 69.80000000000001
+            }
+          },
+          "humidity": 29,
+          "weather": {
+            "text": "晴",
+            "code": 1,
+            "tip": "超舒适，出门走一走吧",
+            "icon": "http://img.chaobaida.com/common/images/weather_wear/static/n1.png"
+          }
+        },
+        "forecast": [
+          {
+            "time": 1390233600000,
+            "temp": {
+              "min": {
+                "c": 5,
+                "f": 41
+              },
+              "max": {
+                "c": 18,
+                "f": 64.4
+              }
+            },
+            "interval": "d",
+            "weather": {
+              "text": "多云",
+              "code": 2,
+              "icon": "http://img.chaobaida.com/common/images/weather_wear/static/d2.png"
+            }
+          },
+          {
+            "time": 1390320000000,
+            "temp": {
+              "min": {
+                "c": 4,
+                "f": 39.2
+              },
+              "max": {
+                "c": 18,
+                "f": 64.4
+              }
+            },
+            "interval": "d",
+            "weather": {
+              "text": "晴",
+              "code": 1,
+              "icon": "http://img.chaobaida.com/common/images/weather_wear/static/d1.png"
+            }
+          },
+          {
+            "time": 1390406400000,
+            "temp": {
+              "min": {
+                "c": 6,
+                "f": 42.8
+              },
+              "max": {
+                "c": 19,
+                "f": 66.2
+              }
+            },
+            "interval": "d",
+            "weather": {
+              "text": "晴",
+              "code": 1,
+              "icon": "http://img.chaobaida.com/common/images/weather_wear/static/d1.png"
+            }
+          },
+          {
+            "time": 1390492800000,
+            "temp": {
+              "min": {
+                "c": 9,
+                "f": 48.2
+              },
+              "max": {
+                "c": 20,
+                "f": 68
+              }
+            },
+            "interval": "d",
+            "weather": {
+              "text": "晴",
+              "code": 1,
+              "icon": "http://img.chaobaida.com/common/images/weather_wear/static/d1.png"
+            }
+          },
+          {
+            "time": 1390579200000,
+            "temp": {
+              "min": {
+                "c": 10,
+                "f": 50
+              },
+              "max": {
+                "c": 21,
+                "f": 69.80000000000001
+              }
+            },
+            "interval": "d",
+            "weather": {
+              "text": "晴转多云",
+              "code": 1,
+              "icon": "http://img.chaobaida.com/common/images/weather_wear/static/d1.png"
+            }
+          }
+        ]
+      }
+    },
+    "set": [
+      {
+        "_id": "52d63f4a31c8f6611a46d332",
+        "content": "渐变色毛衣让普通的穿着亮眼不俗气，搭配铅笔裤有显瘦效果，选择松糕马丁靴，小香风链条包，出街达到视觉上的完美和谐。",
+        "model": "http://img.chaobaida.com/common/images/weather_wear/6/6.jpg",
+        "title": "高街范混搭",
+        "items": [
+          {
+            "iid": "36261602990",
+            "img": "http://img.chaobaida.com/common/images/weather_wear/6/36261602990.png",
+            "label": "套头针织衫",
+            "icon": "http://img.chaobaida.com/common/images/weather_wear/static/coat.png"
+          },
+          {
+            "iid": "20323929884",
+            "img": "http://img.chaobaida.com/common/images/weather_wear/6/20323929884.png",
+            "label": "小脚裤",
+            "icon": "http://img.chaobaida.com/common/images/weather_wear/static/coat.png"
+          },
+          {
+            "iid": "36418017250",
+            "img": "http://img.chaobaida.com/common/images/weather_wear/6/36418017250.png",
+            "label": "系带厚底鞋",
+            "icon": "http://img.chaobaida.com/common/images/weather_wear/static/coat.png"
+          },
+          {
+            "iid": "22286588771",
+            "img": "http://img.chaobaida.com/common/images/weather_wear/6/22286588771.png",
+            "label": "链条包",
+            "icon": "http://img.chaobaida.com/common/images/weather_wear/static/coat.png"
+          }
+        ],
+        "tags": [
+          "微凉"
+        ],
+        "ms": {
+          "w": 300,
+          "h": 400
+        }
+      }
+    ]
+  }
+}
