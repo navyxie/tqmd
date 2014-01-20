@@ -7,7 +7,8 @@
                 <div class="pageBg" style="height:<%=winH %>px;">
                     <img src=<%= oneSet.model %> style="width:<%=oneSet.modelInfo.width %>px;height:<%=oneSet.modelInfo.height %>px;" />
                 </div>
-                <div data-top="50" data-bottom="<%=(winH-195)%>" class="recommentContainer relative" style="top:<%=(winH-195) %>px;height:<%=winH-50 %>px;">
+                <!-- 195 当前recommentContainer显示的高度 -->
+                <div data-top="50" data-bottom="<%=(winH-195)%>" class="recommentContainer relative" style="top:<%=(winH-195) %>px;min-height:<%=winH-50 %>px;">
                     <div class="weaterTextInfo">
                         <span class="wIcon"><img src=<%=current.weather.icon %> /></span>
                         <span class="wText"><%=current.weather.text %></span>
@@ -29,7 +30,7 @@
                     </div>
                     <div class="recommentText">
                         <p class="iconNext"></p>
-                        <span class="tip"><%=oneSet.title %></span>
+                        <span class="tip"><%=current.weather.tip %></span>
                     </div>
                     <div class="recommentItems">
                         <% _.each(oneSet.items,function(item,index){ %>
